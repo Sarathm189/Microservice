@@ -1,10 +1,13 @@
-package com.example.moviecatalogservice.controllers;
+package com.example.moviecatalogservice.models;
 
 public class CatalogItem {
     private String name;
     private String desc;
     private int rating;
-
+    CatalogItem()
+    {
+    	
+    }
     public CatalogItem(String name, String desc, int rating) {
         this.name = name;
         this.desc = desc;
