@@ -7,7 +7,11 @@ public class UserRating {
 
     private String userId;
     private List<Rating> ratings;
-
+    
+    UserRating()
+    {
+    	
+    }
     public String getUserId() {
         return userId;
     }

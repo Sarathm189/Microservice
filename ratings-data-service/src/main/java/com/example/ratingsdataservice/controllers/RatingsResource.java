@@ -8,6 +8,7 @@ import com.example.ratingsdataservice.models.Rating;
 import com.example.ratingsdataservice.models.UserRating;
 
 @RequestMapping("/ratingsdata")
+@RestController
 public class RatingsResource {
 
 	@RequestMapping("/movies/{movieId}")

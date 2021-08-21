@@ -22,11 +22,11 @@ public class CatalogResource {
 	@RequestMapping("/{userId}")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 
-		UserRating userRating = restTemplate.getForObject("http://localhost:8083/ratingsdata/user/" + userId,
+		UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/user/" + userId,
 				UserRating.class);
 
 		return userRating.getRatings().stream().map(rating -> {
-			Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rating.getMovieId(), Movie.class);
+			Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
 			return new CatalogItem(movie.getName(), "Description", rating.getRating());
 		}).collect(Collectors.toList());
 
